@@ -1,0 +1,23 @@
+# Counting Sort - O(n + k), k = zakres wartości
+# Zlicza wystąpienia każdej wartości, potem odtwarza posortowaną listę.
+# Działa tylko na liczbach całkowitych. Bardzo szybki gdy k jest małe.
+# Stabilny | O(n + k) pamięci | Nie jest algorytmem porównującym
+
+from data import *
+
+def counting_sort(lista):
+    lst = lista.copy()
+    min_val = min(lst)
+    max_val = max(lst)
+    count = [0] * (max_val - min_val + 1)
+    for x in lst:
+        count[x - min_val] += 1
+    result = []
+    for i, c in enumerate(count):
+        result.extend([i + min_val] * c)
+    return result
+
+if __name__ == "__main__":
+    testy = [losowa, prawie_posort, odwrocona, jedna_roznica, duplikaty, duza, duza_losowa]
+    for t in testy:
+        print(counting_sort(t))
