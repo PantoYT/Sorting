@@ -1,7 +1,7 @@
-# BogoBogoSort - O((n+1)!) - UWAGA: nie używać na listach > 4 elementów!
-# Dla każdego prefiksu listy stosuje BogoSort. Jeśli prefiks przestaje być
-# posortowany po dodaniu następnego elementu, zaczyna od nowa.
-# Złożoność jest praktycznie nieskończona dla n > 4.
+# BogoBogoSort - O((n+1)!) - WARNING: do not use on lists with > 4 elements!
+# For each prefix applies BogoSort. If the prefix stops being
+# sorted after adding the next element, starts over.
+# Complexity is practically infinite for n > 4.
 
 from data import *
 import random

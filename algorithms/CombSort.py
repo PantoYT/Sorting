@@ -1,7 +1,7 @@
 # Comb Sort - O(n log n) avg
-# Ulepszona wersja Bubble Sort - zamiast porównywać sąsiednie elementy,
-# porównuje oddalone o gap, zmniejsza gap z każdą iteracją (faktor 1.3).
-# Niestabilny | In-place | Eliminuje "żółwie" szybciej niż BubbleSort
+# Improved Bubble Sort — instead of comparing adjacent elements,
+# compares elements separated by a gap, shrinks gap each pass (factor 1.3).
+# Unstable | In-place | Eliminates "turtles" faster than BubbleSort
 
 from data import *
 

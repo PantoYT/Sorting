@@ -1,7 +1,7 @@
 # Selection Sort - O(n²)
-# Znajduje najmniejszy element w nieposortowanej części i wstawia go na początek.
-# Przesuwa granicę posortowanej części o 1 w każdej iteracji.
-# Niestabilny | In-place
+# Finds the smallest element in the unsorted part and places it at the front.
+# Moves the sorted boundary forward by 1 each iteration.
+# Unstable | In-place
 
 from data import *
 

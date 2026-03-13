@@ -1,15 +1,15 @@
 # Gravity Sort - O(n * max)
 # Inna implementacja tej samej idei co BeadSort.
-# Siatka boolean - True = koralik, False = puste miejsce.
-# Koraliki "spadają" kolumnami w dół.
-# Stabilny | Działa tylko na liczbach nieujemnych
+# Boolean grid — True = bead, False = empty slot.
+# Beads "fall" down through columns.
+# Stable | Only works on non-negative integers
 
 from data import *
 
 def gravity_sort(lista):
     lst = lista.copy()
     if any(x < 0 for x in lst):
-        raise ValueError("Gravity sort działa tylko na liczbach nieujemnych")
+        raise ValueError("Gravity sort only works on non-negative integers")
     n = len(lst)
     max_val = max(lst)
     grid = [[j < lst[i] for j in range(max_val)] for i in range(n)]

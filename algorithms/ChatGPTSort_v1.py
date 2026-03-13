@@ -1,9 +1,9 @@
-# ChatGPT Sort v1 - O(n log n) + 10% szans na halucynację
-# Satyryczny algorytm modelujący zachowanie LLM:
-# - pewny siebie nawet gdy się myli
-# - odmawia "niebezpiecznych" list
-# - ma ograniczone "okno kontekstu" (CONTEXT_WINDOW = 8)
-# - 10% szans na losową zamianę elementów ("halucynacja")
+# ChatGPT Sort v1 - O(n log n) + 10% chance of hallucination
+# Satirical algorithm modelling LLM behaviour:
+# - confident even when wrong
+# - refuses "dangerous" lists
+# - has limited "context window" (CONTEXT_WINDOW = 8)
+# - 10% chance of random element swap ("hallucination")
 
 from data import *
 import random
@@ -18,16 +18,16 @@ def hallucinate(lst):
     if random.random() < 0.1:
         i, j = random.randrange(len(lst)), random.randrange(len(lst))
         lst[i], lst[j] = lst[j], lst[i]
-        print("  [ChatGPT]: Jestem pewien że to jest poprawne ✓")
+        print("  [ChatGPT]: I am confident this is correct ✓")
 
 def chatgpt_sort(lista):
     lst = lista.copy()
     n = len(lst)
-    print(f"[ChatGPT]: Oczywiście! Posortowanie listy {n}-elementowej to świetne zadanie.")
-    print(f"[ChatGPT]: Użyję optymalnego algorytmu O(n log n)...")
+    print(f"[ChatGPT]: Of course! Sorting a {n}-element list is a great task.")
+    print(f"[ChatGPT]: I will use the optimal O(n log n) algorithm...")
     time.sleep(0.1)
     if is_dangerous(lst):
-        print("[ChatGPT]: Przepraszam, nie mogę posortować tej listy.")
+        print("[ChatGPT]: I'm sorry, I cannot sort this list.")
         return lst
     for i in range(0, n, CONTEXT_WINDOW):
         chunk = lst[i:i + CONTEXT_WINDOW]
@@ -53,12 +53,12 @@ def chatgpt_sort(lista):
             while j < len(r):
                 lst[k] = r[j]; j += 1; k += 1
         size *= 2
-    print(f"[ChatGPT]: Gotowe! Czy mogę w czymś jeszcze pomóc?")
+    print(f"[ChatGPT]: Done! Is there anything else I can help with?")
     return lst
 
 if __name__ == "__main__":
     print("=== Test ChatGPTSort ===")
     print(chatgpt_sort(losowa))
     print()
-    print("=== Test z niebezpieczną listą ===")
+    print("=== Test with dangerous list ===")
     print(chatgpt_sort([666, 1, 2, 3]))

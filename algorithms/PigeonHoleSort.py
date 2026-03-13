@@ -1,7 +1,7 @@
 # Pigeonhole Sort - O(n + k)
-# Tworzy osobną "skrzynkę" dla każdej możliwej wartości i wrzuca tam elementy.
-# Podobny do Counting Sort ale zachowuje same elementy zamiast ich zliczać.
-# Stabilny | O(n + k) pamięci | Dobry gdy zakres ≈ liczba elementów
+# Creates a separate "hole" for each possible value and places elements there.
+# Similar to Counting Sort but keeps the actual elements instead of counting.
+# Stable | O(n + k) memory | Good when range ≈ number of elements
 
 from data import *
 

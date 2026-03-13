@@ -1,7 +1,7 @@
 # Wiki Sort (Block Merge Sort) - O(n log n)
-# Stabilny merge sort używający O(1) dodatkowej pamięci.
+# Stable merge sort using O(1) extra memory.
 # Scala bloki przez rotacje in-place zamiast alokowania nowych tablic.
-# Stabilny | O(1) pamięci | Kompromis między GrailSort a TimSort
+# Stable | O(1) memory | Compromise between GrailSort and TimSort
 
 from data import *
 import math

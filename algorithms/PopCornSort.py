@@ -1,7 +1,7 @@
 # Popcorn Sort - O(n²)
-# Wariant BubbleSort gdzie elementy "wyskakują" na właściwą pozycję.
-# Każdy element przesuwa się zarówno w prawo jak i w lewo dopóki nie trafi na miejsce.
-# Stabilny | In-place
+# BubbleSort variant where elements "pop" to their correct position.
+# Each element moves both right and left until it lands in place.
+# Stable | In-place
 
 from data import *
 

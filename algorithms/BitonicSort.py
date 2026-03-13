@@ -1,7 +1,7 @@
 # Bitonic Sort - O(n log²n)
-# Buduje sekwencje bitoniczne (rosnąco-malejąco), potem scala je.
-# Działa poprawnie tylko dla n będącego potęgą 2 (uzupełniamy INF).
-# Niestabilny | In-place | Świetny do implementacji równoległych (GPU)
+# Builds bitonic sequences (ascending-descending), then merges them.
+# Only works correctly for n that is a power of 2 (padded with INF).
+# Unstable | In-place | Great for parallel implementations (GPU)
 
 from data import *
 import math

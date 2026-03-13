@@ -1,7 +1,7 @@
 # Quick Sort - O(n log n) avg, O(n²) worst
-# Wybiera pivot, przenosi mniejsze elementy w lewo a większe w prawo,
-# potem rekurencyjnie sortuje obie części.
-# Niestabilny | In-place | Jeden z najszybszych w praktyce
+# Chooses a pivot, moves smaller elements left and larger right,
+# then recursively sorts both parts.
+# Unstable | In-place | Jeden z najszybszych w praktyce
 
 from data import *
 

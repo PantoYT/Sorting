@@ -1,8 +1,8 @@
 # Pancake Sort - O(n²)
-# Jedyna dozwolona operacja to odwrócenie prefiksu listy (jak przekładanie naleśników).
-# Znajduje największy element, odwraca prefiks żeby był na początku,
-# potem odwraca całość żeby wylądował na końcu.
-# Niestabilny | In-place
+# Only allowed operation: reverse a prefix of the list (like flipping pancakes).
+# Finds the largest element, reverses prefix to bring it to front,
+# then reverses to move it to its final position.
+# Unstable | In-place
 
 from data import *
 

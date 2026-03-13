@@ -1,8 +1,8 @@
 # Grail Sort - O(n log n)
-# Stabilny sort in-place używający O(1) dodatkowej pamięci.
-# Scala posortowane bloki przez rotacje tablicy zamiast alokacji pamięci.
-# Używany w niektórych bibliotekach wymagających stabilności i małej pamięci.
-# Stabilny | O(1) pamięci
+# Stable in-place sort using O(1) extra memory.
+# Merges sorted blocks using array rotations instead of memory allocation.
+# Used in some libraries requiring stability and low memory usage.
+# Stable | O(1) memory
 
 from data import *
 

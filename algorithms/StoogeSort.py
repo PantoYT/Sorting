@@ -1,7 +1,7 @@
-# Stooge Sort - O(n^2.7) - celowo głupi rekurencyjny sort
-# Sortuje pierwsze 2/3, potem ostatnie 2/3, potem znowu pierwsze 2/3.
-# Wolniejszy od większości algorytmów O(n²), ale poprawny.
-# UWAGA: nie używać na listach > 20 elementów
+# Stooge Sort - O(n^2.7) — deliberately stupid recursive sort
+# Sorts first 2/3, then last 2/3, then first 2/3 again.
+# Slower than most O(n²) algorithms, but correct.
+# WARNING: do not use on lists with > 20 elements
 
 from data import *
 

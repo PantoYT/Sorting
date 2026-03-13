@@ -1,8 +1,8 @@
 # Patience Sort - O(n log n)
-# Układa elementy w stosy jak w pasjansie - każda karta trafia na
-# pierwszy stos gdzie wierzch jest >= karta. Potem scala stosy
-# używając min-heap. Przy okazji znajduje najdłuższy rosnący podciąg (LIS).
-# Stabilny | O(n) pamięci
+# Deals elements into piles like solitaire — each card goes to
+# the first pile whose top is >= the card. Then merges piles
+# using a min-heap. Also finds the Longest Increasing Subsequence (LIS).
+# Stable | O(n) memory
 
 from data import *
 import heapq

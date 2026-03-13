@@ -1,7 +1,7 @@
 # Radix Sort - O(nk), k = liczba cyfr
-# Sortuje po kolejnych cyfrach od najmniej znaczącej (LSD) do najbardziej.
-# Używa Counting Sort jako pomocniczego dla każdej cyfry.
-# Stabilny | O(n + k) pamięci | Świetny dla liczb całkowitych
+# Sorts by successive digits from least significant (LSD) to most significant.
+# Uses Counting Sort as a subroutine for each digit.
+# Stable | O(n + k) memory | Great for integers
 
 from data import *
 

@@ -1,7 +1,7 @@
-# Bogo Sort - O(n * n!) avg, może nigdy nie skończyć
-# Losowo tasuje listę dopóki nie jest posortowana.
-# Teoretycznie może nigdy nie skończyć (nieskończona złożoność worst case).
-# Niestabilny | In-place | Absolutnie bezużyteczny, legendarny
+# Bogo Sort - O(n * n!) avg, may never finish
+# Randomly shuffles the list until sorted.
+# Theoretically may never finish (infinite worst-case complexity).
+# Unstable | In-place | Absolutely useless, legendary
 
 from data import *
 import random
@@ -13,5 +13,5 @@ def bogo_sort(lista):
     return lst
 
 if __name__ == "__main__":
-    # tylko mała lista!
+    # small list only!
     print(bogo_sort(losowa))

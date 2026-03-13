@@ -1,8 +1,8 @@
 # Postman Sort - O(nk)
-# Historyczny algorytm używany przy sortowaniu poczty.
-# MSD Radix Sort - sortuje od najbardziej znaczącej cyfry
-# (jak poczta: najpierw kraj, potem region, potem miasto).
-# Stabilny | O(n + k) pamięci
+# Historical algorithm used for sorting mail.
+# MSD Radix Sort — sorts from most significant digit
+# (like mail: first country, then region, then city).
+# Stable | O(n + k) memory
 
 from data import *
 

@@ -1,7 +1,7 @@
 # Gnome Sort - O(n²)
-# Jak ogrodnik gnome - idzie w prawo, jeśli element jest nie na miejscu
-# cofa się i zamienia, potem idzie znowu w prawo.
-# Stabilny | In-place | Prosta implementacja ale wolny
+# Like a garden gnome — moves right, if element is out of place
+# steps back and swaps, then moves right again.
+# Stable | In-place | Prosta implementacja ale wolny
 
 from data import *
 

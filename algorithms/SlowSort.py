@@ -1,8 +1,8 @@
-# Slow Sort - O(n^(log n / log log n)) - celowo najwolniejszy poprawny sort
-# Zasada "multiply and surrender" - przeciwieństwo divide and conquer.
-# Sortuje pierwsze 2/3, ostatnie 2/3, znowu pierwsze 2/3... rekurencyjnie.
-# Poprawny matematycznie, ale zaprojektowany żeby być jak najwolniejszy.
-# UWAGA: nie używać na listach > 15 elementów
+# Slow Sort - O(n^(log n / log log n)) — deliberately the slowest correct sort
+# "Multiply and surrender" principle — the opposite of divide and conquer.
+# Sorts first 2/3, last 2/3, first 2/3 again... recursively.
+# Mathematically correct, but designed to be as slow as possible.
+# WARNING: do not use on lists with > 15 elements
 
 from data import *
 

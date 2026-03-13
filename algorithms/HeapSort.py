@@ -1,7 +1,7 @@
 # Heap Sort - O(n log n)
-# Buduje max-heap z listy (rodzic zawsze większy od dzieci),
-# potem wielokrotnie wyciąga największy element na koniec.
-# Niestabilny | In-place | Gwarantowane O(n log n) zawsze
+# Builds a max-heap from the list (parent always greater than children),
+# then repeatedly extracts the largest element to the end.
+# Unstable | In-place | Gwarantowane O(n log n) zawsze
 
 from data import *
 

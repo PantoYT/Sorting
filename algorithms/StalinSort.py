@@ -1,7 +1,7 @@
 # Stalin Sort - O(n)
-# Przechodzi przez listę raz. Każdy element który jest mniejszy od poprzedniego
-# zostaje "usunięty" (rozstrzelany). Wynik zawsze posortowany, ale dane giną.
-# "Stabilny" | In-place | 100% skuteczny, 0% użyteczny
+# Iterates through the list once. Any element smaller than the previous one
+# is "removed" (shot). Result is always sorted, but data is lost.
+# "Stable" | In-place | 100% effective, 0% useful
 
 from data import *
 

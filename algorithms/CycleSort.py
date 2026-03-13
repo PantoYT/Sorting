@@ -1,8 +1,8 @@
 # Cycle Sort - O(n²)
-# Minimalizuje liczbę zapisów do pamięci - dla każdego elementu
-# liczy ile jest od niego mniejszych (to jego docelowa pozycja)
-# i wstawia go tam wprost przez permutację cykliczną.
-# Niestabilny | In-place | Optymalny pod względem liczby zapisów
+# Minimises number of writes — for each element
+# counts how many are smaller (that is its target position)
+# and places it there directly via cyclic permutation.
+# Unstable | In-place | Optimal in terms of number of writes
 
 from data import *
 

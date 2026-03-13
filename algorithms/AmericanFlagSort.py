@@ -1,7 +1,7 @@
 # American Flag Sort - O(nk)
-# MSD (Most Significant Digit) Radix Sort - sortuje od najbardziej znaczącej cyfry.
-# Jak sortowanie poczty: najpierw kraj, potem województwo, potem miasto.
-# In-place | Niestabilny | Dobry dla danych z małym zakresem cyfr
+# MSD (Most Significant Digit) Radix Sort — sorts from most significant digit.
+# Like sorting mail: first country, then region, then city.
+# In-place | Unstable | Good for data with a small digit range
 
 from data import *
 

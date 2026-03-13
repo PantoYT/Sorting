@@ -1,7 +1,7 @@
 # Bubble Sort - O(n²)
-# Porównuje sąsiednie elementy i zamienia je jeśli są w złej kolejności.
-# Większe wartości "wypływają" na koniec listy jak bąbelki.
-# Stabilny | In-place
+# Compares adjacent elements and swaps them if they are in the wrong order.
+# Larger values "bubble up" to the end of the list.
+# Stable | In-place
 
 from data import *
 

@@ -1,7 +1,7 @@
 # Bucket Sort - O(n + k) avg
-# Dzieli elementy na n kubełków (przedziałów), sortuje każdy kubełek
-# osobno (InsertionSort), potem łączy kubełki.
-# Stabilny | O(n + k) pamięci | Świetny przy równomiernym rozkładzie
+# Divides elements into n buckets (ranges), sorts each bucket
+# separately (InsertionSort), then concatenates buckets.
+# Stable | O(n + k) memory | Great with uniform distribution
 
 from data import *
 

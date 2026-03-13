@@ -1,7 +1,7 @@
-# Miracle Sort - złożoność: wieczność
-# Czeka aż fluktuacje kosmicznego promieniowania przestawią bity w pamięci
-# i lista posortuje się sama. Sprawdza co jakiś czas czy cud nastąpił.
-# Serio - to jest "prawdziwy" algorytm jako żart teoretyczny.
+# Miracle Sort - complexity: eternity
+# Waits for cosmic radiation bit-flips to rearrange memory
+# until the list sorts itself. Checks periodically whether the miracle occurred.
+# Seriously — this is a "real" algorithm as a theoretical joke.
 
 from data import *
 import time
@@ -14,12 +14,12 @@ def miracle_sort(lista):
     attempts = 0
     while not is_sorted(lst):
         attempts += 1
-        print(f"Próba {attempts}: brak cudu, czekam na kosmiczne promieniowanie...")
+        print(f"Attempt {attempts}: no miracle yet, waiting for cosmic radiation...")
         time.sleep(1)
         if attempts >= 10:
-            print("Cud się nie wydarzył. Wszechświat odmawia współpracy.")
+            print("Miracle did not happen. The universe refuses to cooperate.")
             return lst
-    print(f"CUDO! Lista posortowana po {attempts} próbach!")
+    print(f"MIRACLE! List sorted after {attempts} attempts!")
     return lst
 
 if __name__ == "__main__":

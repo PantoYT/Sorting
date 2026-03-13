@@ -1,7 +1,7 @@
 # ChatGPT Sort v2 - prawdziwe API call do GPT-4o-mini
-# Sortuje listę przez wysłanie jej do OpenAI API.
-# Wymaga: pip install openai + zmiennej środowiskowej OPENAI_API_KEY
-# Bez klucza uruchamia wersję mock.
+# Sorts the list by sending it to the OpenAI API.
+# Requires: pip install openai + OPENAI_API_KEY environment variable
+# Without a key runs a mock version.
 
 import os
 import json
@@ -24,7 +24,7 @@ def chatgpt_sort_api(lista):
         return lista
     lst = lista.copy()
     prompt = f"Sort this array ascending, return ONLY a JSON array.\nArray: {lst}\nResponse: [1, 2, 3, ...]"
-    print(f"[ChatGPTSort]: Wysyłam do GPT: {lst}")
+    print(f"[ChatGPTSort]: Sending to GPT: {lst}")
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -33,19 +33,19 @@ def chatgpt_sort_api(lista):
             max_tokens=500
         )
         answer = response.choices[0].message.content.strip()
-        print(f"[ChatGPTSort]: GPT odpowiedział: {answer}")
+        print(f"[ChatGPTSort]: GPT responded: {answer}")
         return json.loads(answer)
     except json.JSONDecodeError:
-        print("[ChatGPTSort]: Halucynacja - nieparsowalna odpowiedź!")
+        print("[ChatGPTSort]: Hallucination — unparseable response!")
         return lst
     except Exception as e:
-        print(f"[ChatGPTSort]: Błąd API: {e}")
+        print(f"[ChatGPTSort]: API error: {e}")
         return lst
 
 def chatgpt_sort_mock(lista):
     import random, time
     lst = lista.copy()
-    print(f"[ChatGPTSort MOCK]: Pytam GPT o {len(lst)} elementów...")
+    print(f"[ChatGPTSort MOCK]: Asking GPT about {len(lst)} elements...")
     time.sleep(0.3)
     if random.random() < 0.05:
         print("[ChatGPTSort MOCK]: 'As an AI language model, I cannot...'")
@@ -58,4 +58,4 @@ if __name__ == "__main__":
         print(chatgpt_sort_api(losowa))
     else:
         print(chatgpt_sort_mock(losowa))
-        print("\nAby użyć API: pip install openai && $env:OPENAI_API_KEY='klucz'")
+        print("\nTo use the API: pip install openai && $env:OPENAI_API_KEY='your_key'")

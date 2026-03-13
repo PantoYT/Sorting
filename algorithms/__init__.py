@@ -1,63 +1,61 @@
 """
-Automatyczny discovery algorytmów sortowania.
-Każdy plik *Sort*.py w tym folderze jest importowany automatycznie.
-Dodaj nowy algorytm = dodaj nowy plik. Zero hardcode.
+Auto-discovery of sorting algorithms.
+Every *Sort*.py file in this directory is imported automatically.
+Adding a new algorithm = adding a new file. Zero hardcoding.
 """
 import os
 import importlib
 import inspect
-import re
 
-_dir = os.path.dirname(__file__)
-_parent = os.path.dirname(_dir)
+_dir    = os.path.dirname(os.path.abspath(__file__))
 
-# słownik: nazwa_pliku -> funkcja_sortująca
-REGISTRY = {}
+REGISTRY: dict[str, callable] = {}
 
-def _is_sort_function(name, obj, module_name):
-    if not callable(obj): return False
-    if not inspect.isfunction(obj): return False
-    # tylko funkcje z tego modułu (nie importowane)
-    if obj.__module__ != f"algorithms.{module_name}": return False
-    low = name.lower()
-    # musi mieć "sort" w nazwie
-    if "sort" not in low: return False
-    # wyklucz helpery (insertion_sort_bucket, merge, heapify, itp.)
-    skip = {"merge", "heapify", "flip", "sift", "trinkle", "insertion_sort_bucket",
-            "is_sorted", "worker", "compare_and_swap", "sort3", "sort_quad",
-            "sort_triple", "swap_if_needed", "counting_sort_by_digit", "merge_inplace",
-            "bitonic_merge", "bitonic_sort_helper", "introsort_helper", "slow_sort",
-            "stooge_sort_helper", "insert", "inorder", "partition", "bogosort"}
-    if name in skip: return False
-    return True
+_HELPER_NAMES = frozenset({
+    "merge", "heapify", "flip", "sift", "trinkle", "insertion_sort_bucket",
+    "is_sorted", "worker", "compare_swap", "compare_and_swap", "sort3",
+    "sort_quad", "sort_triple", "swap_if_needed", "counting_sort_by_digit",
+    "merge_inplace", "bitonic_merge", "bitonic_sort_helper", "introsort_helper",
+    "slow_sort", "stooge_sort_helper", "insert", "inorder", "partition",
+    "bogosort", "build_cartesian", "push", "rotate", "weave",
+    "generate_batcher_network", "count_inversions_approx",
+    "fitness", "crossover", "mutate", "parallel_sort",
+})
+
+def _pick_main_function(mod, module_name: str):
+    """Return the primary sort function from a module."""
+    candidates = []
+    mod_qname = f"algorithms.{module_name}"
+    for name, obj in inspect.getmembers(mod, inspect.isfunction):
+        if obj.__module__ != mod_qname:
+            continue
+        if "sort" not in name.lower():
+            continue
+        if name in _HELPER_NAMES:
+            continue
+        candidates.append(name)
+    if not candidates:
+        return None, None
+    # prefer name closest to file name
+    base = module_name.lower().replace("_", "")
+    candidates.sort(key=lambda n: -len(os.path.commonprefix([n.lower(), base])))
+    name = candidates[0]
+    return name, getattr(mod, name)
 
 def _discover():
     for fname in sorted(os.listdir(_dir)):
-        if not fname.endswith(".py"): continue
-        if fname.startswith("_"): continue
+        if not fname.endswith(".py") or fname.startswith("_"):
+            continue
         module_name = fname[:-3]
         try:
             mod = importlib.import_module(f"algorithms.{module_name}")
         except Exception:
             continue
-        # znajdź główną funkcję sortującą
-        funcs = [(n, obj) for n, obj in inspect.getmembers(mod)
-                 if _is_sort_function(n, obj, module_name)]
-        if not funcs:
-            continue
-        # preferuj nazwę najbliższą nazwie pliku
-        file_lower = module_name.lower().replace("_", "")
-        def score(nf):
-            n, _ = nf
-            return -len(os.path.commonprefix([n.lower(), file_lower]))
-        funcs.sort(key=score)
-        func_name, func = funcs[0]
-        REGISTRY[module_name] = func
+        func_name, func = _pick_main_function(mod, module_name)
+        if func is not None:
+            REGISTRY[module_name] = func
+            globals()[func_name] = func
 
 _discover()
 
-# eksportuj wszystkie funkcje do przestrzeni nazw pakietu
-for _mod_name, _func in REGISTRY.items():
-    globals()[_func.__name__] = _func
-
-__all__ = [f.__name__ for f in REGISTRY.values()]
+__all__ = list(REGISTRY.keys()) + ["REGISTRY"]

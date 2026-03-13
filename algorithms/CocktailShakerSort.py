@@ -1,8 +1,8 @@
 # Cocktail Shaker Sort - O(n²)
-# Bubble Sort w obu kierunkach naprzemiennie -
-# raz od lewej do prawej, raz od prawej do lewej.
-# Szybciej radzi sobie z "żółwiami" (małe elementy na końcu).
-# Stabilny | In-place
+# Bubble Sort in both directions alternately —
+# once left to right, once right to left.
+# Handles "turtles" (small elements at the end) faster.
+# Stable | In-place
 
 from data import *
 

@@ -1,7 +1,7 @@
-# Drunk Sort - O(?) - algorytm który jest "pijany"
-# 70% szans na dobry ruch (zamiana jeśli zła kolejność),
-# 30% szans na całkowicie losową zamianę.
-# Ostatecznie dochodzi do celu... zazwyczaj.
+# Drunk Sort - O(?) — the "drunk" algorithm
+# 70% chance of a good move (swap if wrong order),
+# 30% chance of a completely random swap.
+# Eventually gets there... usually.
 
 from data import *
 import random

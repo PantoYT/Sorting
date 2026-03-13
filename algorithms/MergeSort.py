@@ -1,7 +1,7 @@
 # Merge Sort - O(n log n)
-# Rekurencyjnie dzieli listę na połowy aż zostają jednoelementowe kawałki,
-# potem scala je w posortowane pary, czwórki, ósemki itd.
-# Stabilny | O(n) pamięci | Dobry dla dużych danych i linked list
+# Recursively splits the list in half until single-element pieces remain,
+# then merges them into sorted pairs, fours, eights etc.
+# Stable | O(n) memory | Good for large data and linked lists
 
 from data import *
 

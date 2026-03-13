@@ -1,7 +1,7 @@
-# Insertion Sort - O(n²), O(n) dla prawie posortowanych
-# Bierze kolejny element i "wsuwa" go na właściwe miejsce w posortowanej części.
-# Jak sortowanie kart w ręce - każda nowa karta trafia na swoje miejsce.
-# Stabilny | In-place | Bardzo szybki na małych i prawie posortowanych danych
+# Insertion Sort - O(n²), O(n) for nearly sorted
+# Takes the next element and "inserts" it into the correct position in the sorted part.
+# Like sorting cards in hand — each new card goes to its place.
+# Stable | In-place | Very fast on small and nearly-sorted data
 
 from data import *
 

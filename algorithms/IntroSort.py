@@ -1,9 +1,9 @@
 # Intro Sort - O(n log n)
-# Hybryda QuickSort + HeapSort + InsertionSort.
-# Zaczyna od QuickSort, jeśli rekurencja jest za głęboka przełącza na HeapSort,
-# dla małych tablic (< 16) używa InsertionSort.
-# To jest std::sort w C++.
-# Niestabilny | In-place | Bardzo szybki w praktyce
+# Hybrid of QuickSort + HeapSort + InsertionSort.
+# Starts with QuickSort; if recursion goes too deep, switches to HeapSort;
+# for small arrays (< 16) uses InsertionSort.
+# This is std::sort in C++.
+# Unstable | In-place | Bardzo szybki w praktyce
 
 from data import *
 import math

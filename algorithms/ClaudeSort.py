@@ -1,10 +1,10 @@
-# Claude Sort - O(n log n) + pytania których nikt nie prosił
-# Satyryczny algorytm modelujący zachowanie Claude:
-# - pyta o kontekst przed sortowaniem
-# - proponuje alternatywy
-# - wyjaśnia co robi
-# - odmawia "szkodliwych" wartości
-# - na końcu pyta czy było pomocne
+# Claude Sort - O(n log n) + questions nobody asked for
+# Satirical algorithm modelling Claude behaviour:
+# - asks for context before sorting
+# - suggests alternatives
+# - explains what it's doing
+# - refuses "harmful" values
+# - asks at the end if it was helpful
 
 from data import *
 import time
@@ -15,13 +15,13 @@ def is_harmful(lst):
 def claude_sort(lista):
     lst = lista.copy()
     n = len(lst)
-    print(f"[Claude]: Rozumiem że chcesz posortować listę {n} elementów.")
-    print(f"[Claude]: Zakładam że to liczby całkowite - powiedz jeśli nie.")
+    print(f"[Claude]: I understand you want to sort a list of {n} elements.")
+    print(f"[Claude]: I assume these are integers — let me know if not.")
     time.sleep(0.05)
     if is_harmful(lst):
-        print("[Claude]: Lista zawiera niepokojące wartości. Nie mogę kontynuować.")
+        print("[Claude]: The list contains concerning values. I cannot proceed.")
         return lst
-    print(f"[Claude]: Użyję podejścia hybrydowego (mogę też użyć QuickSort, HeapSort lub RadixSort).")
+    print(f"[Claude]: I will use a hybrid approach (I could also use QuickSort, HeapSort or RadixSort).")
     RUN = 32
 
     def insertion(arr, left, right):
@@ -59,7 +59,7 @@ def claude_sort(lista):
                 merge(lst, left, mid, right)
         size *= 2
 
-    print(f"[Claude]: Gotowe! Złożoność: O(n log n). Czy to było pomocne?")
+    print(f"[Claude]: Done! Complexity: O(n log n). Was this helpful?")
     return lst
 
 if __name__ == "__main__":

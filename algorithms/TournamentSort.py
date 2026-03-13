@@ -1,7 +1,7 @@
 # Tournament Sort - O(n log n)
-# Buduje drzewo turniejowe (jak w sporcie) - zwycięzca każdej rundy przechodzi dalej.
-# Wielokrotnie wyciąga minimum, zastępuje je INF i aktualizuje drzewo.
-# Niestabilny | O(n) pamięci | Podobny do HeapSort
+# Builds a tournament tree (like in sports) — winner of each round advances.
+# Repeatedly extracts the minimum, replaces it with INF and updates the tree.
+# Unstable | O(n) memory | Similar to HeapSort
 
 from data import *
 import math

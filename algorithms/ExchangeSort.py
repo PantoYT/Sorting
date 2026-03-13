@@ -1,7 +1,7 @@
 # Exchange Sort - O(n²)
-# Każdy element porównuje się ze WSZYSTKIMI następnymi (nie tylko sąsiednim).
-# Jak Selection Sort ale zamienia od razu zamiast szukać minimum.
-# Niestabilny | In-place | Wygląda jak BubbleSort ale nie jest - inna kolejność zamian
+# Each element is compared with ALL subsequent ones (not just the neighbour).
+# Like Selection Sort but swaps immediately instead of finding the minimum.
+# Unstable | In-place | Looks like BubbleSort but isn't — different swap order
 
 from data import *
 

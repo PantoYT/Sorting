@@ -1,7 +1,7 @@
 # Strand Sort - O(n²) worst, O(n) best
-# Wielokrotnie wyciąga rosnące podciągi ("strand") z listy i scala je.
-# Naturalnie wydajny na częściowo posortowanych danych.
-# Stabilny | O(n) pamięci
+# Repeatedly extracts ascending subsequences ("strands") from the list and merges them.
+# Naturally efficient on partially sorted data.
+# Stable | O(n) memory
 
 from data import *
 

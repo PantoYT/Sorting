@@ -1,8 +1,8 @@
 # Burnt Pancake Sort - O(n²)
-# Wariant PancakeSort gdzie każdy "naleśnik" ma jedną stronę przypaloną.
-# Naleśnik musi wylądować przypaloną stroną na dole.
-# Jedyna operacja: odwrócenie prefiksu (i obrócenie elementów).
-# Niestabilny | In-place
+# Variant of PancakeSort where each "pancake" has one burnt side.
+# Each pancake must land with its burnt side facing down.
+# Only operation: prefix reversal (and flipping elements).
+# Unstable | In-place
 
 from data import *
 

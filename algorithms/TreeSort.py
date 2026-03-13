@@ -1,7 +1,7 @@
-# Tree Sort - O(n log n) avg, O(n²) worst (niezbalansowane BST)
-# Wstawia wszystkie elementy do BST (Binary Search Tree),
-# potem przechodzi drzewo metodą in-order (lewo-korzeń-prawo).
-# Stabilny | O(n) pamięci
+# Tree Sort - O(n log n) avg, O(n²) worst (unbalanced BST)
+# Inserts all elements into a BST (Binary Search Tree),
+# then traverses the tree in-order (left-root-right).
+# Stable | O(n) memory
 
 from data import *
 

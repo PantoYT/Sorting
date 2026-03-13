@@ -1,8 +1,8 @@
 # Spread Sort - O(n) avg
-# Hybrydowy algorytm z biblioteki Boost C++.
-# Sortuje bitowo od najbardziej znaczącego bajtu (MSD),
-# dla małych partycji przełącza na InsertionSort.
-# Niestabilny | In-place | Bardzo szybki w praktyce
+# Hybrid algorithm from the Boost C++ library.
+# Sorts bitwise from most significant byte (MSD),
+# switches to InsertionSort for small partitions.
+# Unstable | In-place | Bardzo szybki w praktyce
 
 from data import *
 

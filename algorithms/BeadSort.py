@@ -1,22 +1,22 @@
-# Bead Sort - O(S) gdzie S = suma wszystkich elementów
-# Symulacja fizyczna - każda liczba to wiersz koralików na drutach.
-# Koraliki "opadają" kolumnami zgodnie z grawitacją.
-# Działa tylko na liczbach nieujemnych całkowitych.
+# Bead Sort - O(S) where S = sum of all elements
+# Physical simulation — each number is a row of beads on rods.
+# Beads "fall" down columns due to gravity.
+# Only works on non-negative integers.
 
 from data import *
 
 def bead_sort(lista):
     lst = lista.copy()
     if any(x < 0 for x in lst):
-        raise ValueError("Bead sort działa tylko na liczbach nieujemnych")
+        raise ValueError("Bead sort only works on non-negative integers")
     n = len(lst)
     max_val = max(lst)
-    # siatka: grid[i][j] = 1 jeśli element i ma koralik na drucie j
+    # grid: grid[i][j] = 1 if element i has a bead on rod j
     grid = [[1 if j < lst[i] else 0 for j in range(max_val)] for i in range(n)]
-    # koraliki opadają grawitacyjnie - liczymy ile jest w każdej kolumnie
+    # beads fall due to gravity — count how many are in each column
     for col in range(max_val):
         count = sum(grid[row][col] for row in range(n))
-        # wypełnij od dołu
+        # fill from the bottom
         for row in range(n):
             grid[row][col] = 1 if row >= n - count else 0
     # przelicz wiersze z powrotem na liczby

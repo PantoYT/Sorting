@@ -1,7 +1,7 @@
 # Quad Sort - O(n log n)
-# Adaptacyjny sort który najpierw sortuje bloki po 4 elementy (quady)
-# używając sieci sortujących (stałej liczby porównań), potem scala.
-# Stabilny | O(n) pamięci | Bardzo szybki na prawie posortowanych danych
+# Adaptive sort that first sorts 4-element blocks (quads)
+# using sorting networks (fixed number of comparisons), then merges.
+# Stable | O(n) memory | Very fast on nearly-sorted data
 
 from data import *
 
@@ -10,7 +10,7 @@ def swap_if_needed(lst, i, j):
         lst[i], lst[j] = lst[j], lst[i]
 
 def sort_quad(lst, i):
-    # sieć sortująca dla 4 elementów - 5 porównań
+    # sorting network for 4 elements — 5 comparisons
     swap_if_needed(lst, i,     i + 1)
     swap_if_needed(lst, i + 2, i + 3)
     swap_if_needed(lst, i,     i + 2)
@@ -45,13 +45,13 @@ def quad_sort(lista):
     while i + 3 < n:
         sort_quad(lst, i)
         i += 4
-    # obsłuż resztę (1, 2 lub 3 elementy)
+    # handle remainder (1, 2, or 3 elements)
     rem = n - i
     if rem == 2:
         swap_if_needed(lst, i, i + 1)
     elif rem == 3:
         sort_triple(lst, i)
-    # scalaj rosnącymi blokami
+    # merge with growing block sizes
     size = 4
     while size < n:
         for left in range(0, n, 2 * size):

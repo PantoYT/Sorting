@@ -1,10 +1,10 @@
-# Smooth Sort - O(n log n), O(n) dla prawie posortowanych
-# Wariant HeapSort używający "kopca Leonarda" opartego na liczbach Leonardo
+# Smooth Sort - O(n log n), O(n) for nearly sorted
+# HeapSort variant using a "Leonardo heap" based on Leonardo numbers
 # (L(0)=1, L(1)=1, L(n)=L(n-1)+L(n-2)+1 = 1,1,3,5,9,15,25,41...)
-# Szczególnie wydajny na prawie posortowanych danych.
-# Niestabilny | In-place
-# Uwaga: pełna implementacja jest jedną z najtrudniejszych w teorii sortowania.
-# Ta wersja używa uproszczonego heap opartego na sekwencji Leonardo.
+# Particularly efficient on nearly-sorted data.
+# Unstable | In-place
+# Note: the full implementation is one of the hardest in sorting theory.
+# This version uses a simplified heap based on the Leonardo sequence.
 
 from data import *
 
@@ -40,10 +40,10 @@ def smooth_sort(lista):
             sizes.append(1)
         else:
             sizes.append(1)
-        # heapify bieżący blok
+        # heapify current block
         start = i - sizes[-1] + 1
         _heapify(lst, start, i)
-        # napraw właściwość kopca między blokami
+        # fix heap property between blocks
         j = len(sizes) - 1
         pos = i
         while j > 0:
@@ -63,7 +63,7 @@ def smooth_sort(lista):
             right_child = i - 1
             # rozbij kopiec na dwa podkopce
             old = sizes.pop()
-            # przybliżenie: znajdź rozmiary dzieci
+            # approximate: find children sizes
             k = LEO.index(old) if old in LEO else -1
             if k >= 2:
                 sizes.append(LEO[k - 1])

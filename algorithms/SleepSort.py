@@ -1,7 +1,7 @@
-# Sleep Sort - O(max(lista)) czasowo
-# Dla każdego elementu uruchamia wątek który śpi przez n * 0.01 sekund,
-# potem dopisuje element do wyniku. Mniejsze liczby budzą się wcześniej.
-# Działa tylko na liczbach dodatnich. Czas = wartość największego elementu * 0.01s.
+# Sleep Sort - O(max(list)) time
+# For each element spawns a thread that sleeps for n * 0.01 seconds,
+# then appends the element to the result. Smaller numbers wake first.
+# Only works on positive numbers. Time = largest element × 0.01s.
 
 from data import *
 import threading

@@ -1,7 +1,7 @@
-# Counting Sort - O(n + k), k = zakres wartości
-# Zlicza wystąpienia każdej wartości, potem odtwarza posortowaną listę.
-# Działa tylko na liczbach całkowitych. Bardzo szybki gdy k jest małe.
-# Stabilny | O(n + k) pamięci | Nie jest algorytmem porównującym
+# Counting Sort - O(n + k), k = value range
+# Counts occurrences of each value, then reconstructs the sorted list.
+# Works only on integers. Very fast when k is small.
+# Stable | O(n + k) memory | Not a comparison-based algorithm
 
 from data import *
 

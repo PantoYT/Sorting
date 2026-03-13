@@ -1,7 +1,7 @@
 # Library Sort - O(n log n) avg
-# InsertionSort z lukami między elementami żeby przesuwanie było szybsze.
-# Jak bibliotekarz zostawiający wolne miejsca na półce na nowe książki.
-# Stabilny | O(n) pamięci
+# InsertionSort with gaps between elements so shifting is faster.
+# Like a librarian leaving gaps on the shelf for new books.
+# Stable | O(n) memory
 
 from data import *
 
@@ -10,22 +10,22 @@ def library_sort(lista):
     n = len(lst)
     if n <= 1:
         return lst
-    # używamy zwykłego posortowanego bufora z lukami
-    # rozmiar bufora = 2*n żeby było dość miejsca na luki
+    # we use a simple sorted buffer with gaps
+    # buffer size = 2*n to leave room for gaps
     GAP_FACTOR = 2
     buf_size = n * GAP_FACTOR
     buf = [None] * buf_size
 
-    # wstaw pierwszy element na pozycję 1 (zostaw lukę na początku)
+    # insert first element at position 1 (leave a gap at the start)
     buf[1] = lst[0]
     inserted = 1
 
     for i in range(1, n):
         x = lst[i]
-        # binary search w buforze (tylko na zajętych pozycjach)
+        # binary search in the buffer (occupied positions only)
         filled = [v for v in buf if v is not None]
         filled.sort()
-        # znajdź gdzie wstawić przez binary search
+        # find insertion point via binary search
         lo, hi = 0, len(filled)
         while lo < hi:
             mid = (lo + hi) // 2

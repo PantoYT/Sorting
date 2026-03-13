@@ -1,8 +1,8 @@
-# Tim Sort - O(n log n), O(n) dla prawie posortowanych
-# Hybryda Insertion Sort + Merge Sort. Dzieli na małe bloki (RUN=32),
-# sortuje każdy InsertionSort, potem scala MergeSort.
-# To jest sorted() i list.sort() w Pythonie pod spodem.
-# Stabilny | O(n) pamięci | Najlepszy dla realnych danych
+# Tim Sort - O(n log n), O(n) for nearly sorted
+# Hybrid of Insertion Sort + Merge Sort. Divides into small blocks (RUN=32),
+# sorts each with InsertionSort, then merges with MergeSort.
+# This is what sorted() and list.sort() use under the hood in Python.
+# Stable | O(n) memory | Najlepszy dla realnych danych
 
 from data import *
 

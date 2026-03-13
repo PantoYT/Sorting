@@ -1,7 +1,7 @@
 # Flash Sort - O(n) avg
-# Klasyfikuje elementy do klas na podstawie ich wartości (podobnie do BucketSort),
-# potem robi permutację cykliczną żeby je poustawiać, na końcu InsertionSort.
-# Niestabilny | In-place | Bardzo szybki przy równomiernym rozkładzie
+# Classifies elements into classes based on their values (similar to BucketSort),
+# then performs cyclic permutation to place them, followed by InsertionSort.
+# Unstable | In-place | Very fast with uniform distribution
 
 from data import *
 

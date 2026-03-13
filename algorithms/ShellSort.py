@@ -1,7 +1,7 @@
 # Shell Sort - O(n log²n)
-# Ulepszona wersja Insertion Sort - najpierw sortuje elementy oddalone o duży
-# odstęp (gap), stopniowo zmniejsza gap aż do 1.
-# Niestabilny | In-place | Znacznie szybszy od InsertionSort na dużych danych
+# Improved Insertion Sort — first sorts elements separated by a large
+# gap, gradually shrinks the gap down to 1.
+# Unstable | In-place | Much faster than InsertionSort on large data
 
 from data import *
 

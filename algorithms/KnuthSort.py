@@ -1,8 +1,8 @@
-# Knuth Sort (3-way QuickSort / Dutch Flag) - O(n log n) avg, O(n) dla powtórzeń
+# Knuth Sort (3-way QuickSort / Dutch Flag) - O(n log n) avg, O(n) for duplicates
 # Autorstwa Donalda Knutha - 3-way partition QuickSort.
 # Dzieli na 3 grupy: < pivot, == pivot, > pivot.
-# Drastycznie szybszy od zwykłego QuickSort gdy jest dużo duplikatów.
-# Niestabilny | In-place | "The Art of Computer Programming" vol. 3
+# Dramatically faster than regular QuickSort when there are many duplicates.
+# Unstable | In-place | "The Art of Computer Programming" vol. 3
 
 from data import *
 

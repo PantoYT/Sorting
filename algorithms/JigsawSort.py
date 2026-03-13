@@ -1,8 +1,8 @@
 # Jigsaw Sort - O(n²)
-# Sortuje "puzzlowo" - dzieli listę na kawałki, sortuje każdy,
-# potem scala je jak układankę dopasowując krawędzie (ostatni el. bloku <= pierwszy el. następnego).
-# Jeśli kawałki nie pasują, zamienia sąsiadujące elementy na granicy i powtarza.
-# Stabilny | O(n) pamięci | Oryginalny algorytm edukcyjny
+# Sorts "jigsaw-style" — splits list into pieces, sorts each,
+# then merges them like a puzzle matching edges (last element of block <= first of next).
+# If pieces don't fit, swaps boundary elements and repeats.
+# Stable | O(n) memory | Original educational algorithm
 
 from data import *
 
@@ -16,7 +16,7 @@ def jigsaw_sort(lista):
     for i in range(0, n, block):
         end = min(i + block, n)
         lst[i:end] = sorted(lst[i:end])
-    # scalaj dopasowując "krawędzie" dopóki całość nie jest posortowana
+    # merge by matching "edges" until the whole is sorted
     changed = True
     while changed:
         changed = False

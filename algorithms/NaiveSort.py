@@ -1,8 +1,8 @@
-# Naive Sort - O(n²) do O(n³) zależnie od implementacji
-# "Naiwny" sort - sprawdza czy lista jest posortowana, jeśli nie
-# to zamienia PIERWSZĄ znalezioną złą parę i zaczyna sprawdzanie od nowa.
-# Konceptualnie najprostszy możliwy sort (poza BogoSort).
-# Niestabilny | In-place | Świetny jako przykład dydaktyczny czego NIE robić
+# Naive Sort - O(n²) to O(n³) depending on implementation
+# "Naive" sort — checks if the list is sorted, if not
+# swaps the FIRST bad pair found and restarts from scratch.
+# Conceptually the simplest possible sort (besides BogoSort).
+# Unstable | In-place | Great teaching example of what NOT to do
 
 from data import *
 
@@ -13,7 +13,7 @@ def naive_sort(lista):
     while i < n - 1:
         if lst[i] > lst[i + 1]:
             lst[i], lst[i + 1] = lst[i + 1], lst[i]
-            i = 0  # zacznij od nowa po każdej zamianie
+            i = 0  # restart from scratch after each swap
         else:
             i += 1
     return lst

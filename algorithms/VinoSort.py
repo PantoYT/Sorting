@@ -1,9 +1,9 @@
 # Vino Sort (Wine Sort) 🍷 - O(n²)
-# Oryginalny algorytm inspirowany procesem dekantacji wina:
-# "dobre" elementy (na właściwym miejscu) zostają,
-# "złe" są zbierane do "karafki" (osobnej listy), dekantowane (sortowane),
-# potem przelewane z powrotem na odpowiednie pozycje.
-# Stabilny | O(n) pamięci | Autorski algorytm
+# Original algorithm inspired by the wine decanting process:
+# "good" elements (in their correct place) stay,
+# "bad" ones are collected into a "carafe" (separate list), decanted (sorted),
+# then poured back into the correct positions.
+# Stable | O(n) memory | Original algorithm
 
 from data import *
 
@@ -12,7 +12,7 @@ def vino_sort(lista):
     n = len(lst)
     sorted_ref = sorted(lst)
 
-    # zbierz "złe" elementy do karafki
+    # collect "bad" elements into the carafe
     karafka = []
     wolne_miejsca = []
     for i in range(n):
@@ -20,10 +20,10 @@ def vino_sort(lista):
             karafka.append(lst[i])
             wolne_miejsca.append(i)
 
-    # dekantuj karafkę (posortuj złe elementy)
+    # decant the carafe (sort the bad elements)
     karafka.sort()
 
-    # przelej z powrotem na właściwe miejsca
+    # pour back into correct positions
     for i, pos in enumerate(wolne_miejsca):
         lst[pos] = karafka[i]
 
